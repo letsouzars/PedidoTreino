@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            border: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: gray;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .btn {
+            background-color: black;
+            color: white;
+            font: 300 40px 'Poppins', sans-serif;
+            padding: 15px 30px;
+            width: 200px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: ease-in-out 0.3s;
+        }
+
+        .tituloPrincipal {
+            font: 700 40px 'Poppins', sans-serif;
+        }
+
+        .titulo {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .botoes {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 200px;
+        }
+
+        @media (min-width: 768px) {
+    .botoes {
+        margin: 0 10%; 
+    }
+
+    .btn {
+        
+        font-size: 30px;
+        padding: 10px 20px;
+        width: auto; 
+    }
+
+    .tituloPrincipal {
+        font-size: 30px;
+    }
+
+    .titulo {
+        margin: 30px 0;
+    }
+}
+    </style>
+   <script>
+    function sim() {
+        location.href = "https://open.spotify.com/playlist/278mlOibTLiKvYZKhPHtlD?si=rYgc43fTSJ6MqFpqMLoi6w";
+    }
+
+    function esquivo(btn) {
+        btn.style.position = 'absolute';
+        btn.style.bottom = posicaoAleatoria(10, 80);
+        btn.style.left = posicaoAleatoria(10, 80);
+    }
+
+    function posicaoAleatoria(min, max) {
+        return (Math.random() * (max - min) + min) + "%";
+    }
+</script>
+</head>
+
+<body>
+    <div class="titulo">
+        <h1 class="tituloPrincipal">
+            QUER TREINAR COMIGO?
+        </h1>
+    </div>
+    <div class="botoes">
+        <div class="botaoS">
+            <button class="btn" onclick="sim()">SIM
+            </button>
+        </div>
+        <div class="botaoN">
+            <button class="btn" onclick="esquivo(this)" onmouseover="esquivo(this)">NÃO
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>
